@@ -27,6 +27,8 @@ public class Driver {
 		ll.deleteAtPosition(3);
 		System.out.println();
 		ll.displayStraight();
+		System.out.println("Reverse");
+		ll.displayReverse();
 	}
 
 }

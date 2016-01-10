@@ -97,5 +97,15 @@ class DoublyLinkedList {
 			System.out.println("invalid Postion");
 		}
 	}
+	public void displayReverse(){
+		DoublyLLNode currentNode=head;
+		while(currentNode.getNext()!=null){
+			currentNode=currentNode.getNext();
+		}
+		while(currentNode.getPrevious()!=null){
+			System.out.print(currentNode.getData()+"<=>");
+			currentNode=currentNode.getPrevious();
+		}
+	}
 	
 }
