@@ -52,6 +52,20 @@ public class Driver {
 			System.out.print(temp.getData()+"->");
 			temp=temp.getNext();
 		}
+		System.out.println();
+		ll.addNodeAtEnd(75);
+		ll.addNodeAtEnd(85);
+		ll.addNodeAtEnd(95);
+		ll.addNodeAtEnd(105);
+		temp=ll.head;
+		while(temp!=null){
+			System.out.print(temp.getData()+"->");
+			temp=temp.getNext();
+		}
+		System.out.println(ll.length);
+		Integer value= ll.nthNodeFromEnd(3);
+		System.out.println();
+		System.out.println(value.intValue());
 	}
 
 }

@@ -4,7 +4,7 @@
  * 	head- 	the current starting node of the linked list
  */
 class LinkedList {
-	private int length;
+	int length;
 	LinkNode head;
 	/*
 	 * Adds a node at beginning of linked list
@@ -127,6 +127,22 @@ class LinkedList {
 			//delete current node
 			currentNode.setNext(null);
 			currentNode=null;
+			length--;
 		}
+	}
+	public Integer nthNodeFromEnd(int position){
+		if(position>length || position<0){
+			return null;
+		}
+		LinkNode currentNode=head;
+		int previousNodeOfActualNode=length-position;
+		System.out.println();
+		System.out.println(previousNodeOfActualNode);
+		for(int i=0;i<previousNodeOfActualNode-1;i++){
+			currentNode=currentNode.getNext();
+		}
+		return new Integer(currentNode.getNext().getData());
+		
+		
 	}
 }
