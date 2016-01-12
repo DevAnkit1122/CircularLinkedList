@@ -152,7 +152,7 @@ class LinkedList {
 		LinkNode secondPointer=head;
 		// First pointer moves only after the second pointer moves for first n positions;
 		//by the time the second pointer reaches the last node, first pointer is at the nth node from last
-		int secondPointerPositionCounter=0;
+		int secondPointerPositionCounter=1;
 		while(secondPointer.getNext()!=null){
 			
 			secondPointer = secondPointer.getNext();
@@ -161,6 +161,6 @@ class LinkedList {
 				firstPointer=firstPointer.getNext();
 			}
 		}
-		return firstPointer.getNext().getData();
+		return firstPointer.getData();
 	}
 }
