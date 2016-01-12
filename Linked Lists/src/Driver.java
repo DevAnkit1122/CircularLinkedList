@@ -65,8 +65,10 @@ public class Driver {
 		System.out.println(ll.length);
 		Integer value= ll.nthNodeFromEnd(3);
 		System.out.println();
-		System.out.println(value.intValue());
-		System.out.println(ll.nthNodeFromEndWithTwoPointers(3));
+		System.out.println(value+"th node from end calculated in for loop:"+value.intValue());
+		System.out.println(value+"th node from end calculated with two pinters:"+ll.nthNodeFromEndWithTwoPointers(3));
+		System.out.println("LoopExists in Linked List :"+ll.checkIfLoopIsPresentInLL());
+		
 	}
 
 }

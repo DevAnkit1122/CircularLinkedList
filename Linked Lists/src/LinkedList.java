@@ -163,4 +163,27 @@ class LinkedList {
 		}
 		return firstPointer.getData();
 	}
+	/*
+	 * Take two pointers one moving faster than other.
+	 * Consider the following LL:
+	 * 			*->*->*->*->*->*->*->*->*
+	 * 						   |		|
+	 * 						   ^-*<-*<-<
+	 * 
+	 * If a loop exists , then the fastPointer will out be able to get out of the loop(as it will never ncounter null
+	 * And at some point both fast and slow pointer will be pointing to the same node.
+	 * 
+	 * To test for a positive scenario, overload addNode() with a LinkNode as parameter.
+	 */
+	public boolean checkIfLoopIsPresentInLL() {
+		LinkNode slowPointer=head;
+		LinkNode fastPointer=head;
+		while(fastPointer!=null && fastPointer.getNext()!=null){
+			fastPointer=fastPointer.getNext().getNext();
+			slowPointer=slowPointer.getNext();
+			if(slowPointer==fastPointer)
+				return true;
+		}
+		return false;
+	}
 }
