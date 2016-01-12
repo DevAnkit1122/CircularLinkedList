@@ -186,4 +186,40 @@ class LinkedList {
 		}
 		return false;
 	}
+	
+	public Integer findHeadOfLoop(){
+		boolean loopExists=false;
+		LinkNode slowPointer=head;
+		LinkNode fastPointer=head;
+		while(fastPointer!=null && fastPointer.getNext()!=null){
+			fastPointer=fastPointer.getNext().getNext();
+			slowPointer=slowPointer.getNext();
+			if(slowPointer==fastPointer){
+				loopExists=true;
+				break;
+			}
+		}
+		if(loopExists){
+			slowPointer=head;
+			while(slowPointer!=fastPointer){
+				slowPointer=slowPointer.getNext();
+				fastPointer=fastPointer.getNext();
+			}
+			return fastPointer.getData();
+		}
+		return null;
+	}
+	
+	public LinkNode reverseLinkedList(){
+		LinkNode current=head;
+		LinkNode previous=null;
+		while(current!=null){
+			LinkNode next= current.getNext();
+			current.setNext(previous);
+			previous=current;
+			current=next;
+		}
+		return previous;
+	}
+	
 }

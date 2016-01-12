@@ -68,7 +68,19 @@ public class Driver {
 		System.out.println(value+"th node from end calculated in for loop:"+value.intValue());
 		System.out.println(value+"th node from end calculated with two pinters:"+ll.nthNodeFromEndWithTwoPointers(3));
 		System.out.println("LoopExists in Linked List :"+ll.checkIfLoopIsPresentInLL());
+		System.out.println("Find head of loop: "+ll.findHeadOfLoop());
+		ll.head=ll.reverseLinkedList();
+		System.out.println("on reversing Linked List");
+		temp=ll.head;
+		while(temp!=null){
+			System.out.print(temp.getData()+"->");
+			temp=temp.getNext();
+		}
 		
 	}
-
+	// to implement:
+	//find intersceting node of two ll
+	
+	// singly linked list display from end
+	//merge two sorted ll in sorted order
 }
