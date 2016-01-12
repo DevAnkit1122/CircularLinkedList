@@ -141,8 +141,26 @@ class LinkedList {
 		for(int i=0;i<previousNodeOfActualNode-1;i++){
 			currentNode=currentNode.getNext();
 		}
-		return new Integer(currentNode.getNext().getData());
-		
-		
+		return new Integer(currentNode.getNext().getData()) ;
+	}
+	
+	public Integer nthNodeFromEndWithTwoPointers(int position){
+		if(position>length || position<0){
+			return null;
+		}
+		LinkNode firstPointer=head;
+		LinkNode secondPointer=head;
+		// First pointer moves only after the second pointer moves for first n positions;
+		//by the time the second pointer reaches the last node, first pointer is at the nth node from last
+		int secondPointerPositionCounter=0;
+		while(secondPointer.getNext()!=null){
+			
+			secondPointer = secondPointer.getNext();
+			secondPointerPositionCounter++;
+			if(secondPointerPositionCounter>position){
+				firstPointer=firstPointer.getNext();
+			}
+		}
+		return firstPointer.getNext().getData();
 	}
 }

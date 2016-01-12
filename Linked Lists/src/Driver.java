@@ -66,6 +66,7 @@ public class Driver {
 		Integer value= ll.nthNodeFromEnd(3);
 		System.out.println();
 		System.out.println(value.intValue());
+		System.out.println(ll.nthNodeFromEndWithTwoPointers(3));
 	}
 
 }
